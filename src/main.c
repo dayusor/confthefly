@@ -4,21 +4,21 @@
 #include "linked_list.h"
 
 int main() {
-	list_node *list = new_list_node("yolo");
-	list_node *final_node = list;
+	root_list_node *root_list = new_root_list_node("yolo");
 
 	int i;
-	for (i = 0; i <= 1000000; i++ ) {
+	for (i = 0; i <= 10; i++ ) {
 		char *string = malloc(sizeof(char) * 10);
 		snprintf(string, sizeof(char) * 10, "%d", i);
-		final_node = create_and_append(final_node, string);
+		create_and_append(root_list, string);
+		free(string);
 	}
 
-	list_node *match_node = search_node_by_string(list, "1000000");
+	list_node *match_node = search_node_by_string(root_list, "10");
 	if (match_node)
 		printf("String found in the list: %s\n", match_node->string);
 
-	free_list_memory(list);
+	free_list_memory(root_list);
 	return 0;
 }
 
