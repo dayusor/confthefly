@@ -1,2 +1,2 @@
 all:
-	gcc main.c linked_list.c -o daemon
+	gcc -g main.c linked_list.c -o daemon
