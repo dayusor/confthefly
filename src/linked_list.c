@@ -3,6 +3,10 @@
 #include <string.h>
 #include "linked_list.h"
 
+/* To create a list node, first create a root node, then
+ * append new nodes
+ */
+
 root_list_node *
 new_root_list_node(const char *string) {
 	root_list_node *root_node = malloc(sizeof(root_list_node));
