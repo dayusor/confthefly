@@ -12,9 +12,3 @@ hash(unsigned char *str) {
 
     return hash % 100;
 }
-
-int
-main (int argc, char *argv[]) {
-	printf("hash_code of: %s %lu\n", argv[1], hash((unsigned char *)argv[1]));
-	return 0;
-}
