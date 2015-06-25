@@ -41,15 +41,21 @@ create_and_append(root_list_node *root_node, const char *string) {
 void
 free_list_memory(root_list_node *root_node) {
 
-	list_node *node = root_node->next;
-	while (node->next != NULL) {
-		list_node *next_node = node->next;
-		free(node->string);
-		free(node);
-		node = next_node;
+	if (root_node == NULL) {
+		return;
 	}
-	free(node->string);
-	free(node);
+
+	list_node *node = NULL;
+	if (root_node->next != NULL) {
+		node = root_node->next;
+		while (node != NULL) {
+			list_node *next_node = node->next;
+			free(node->string);
+			free(node);
+			node = next_node;
+		}
+	}
+
 	free(root_node->string);
 	free(root_node);
 }

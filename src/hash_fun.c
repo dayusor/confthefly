@@ -1,14 +1,15 @@
 #include <stdio.h>
 
 unsigned long
-hash(unsigned char *str) {
+hash_dbj2(unsigned char *str) {
     unsigned long hash = 0;
     int c;
 
     while ((c = *str++) != '\0') {
         hash = ((hash << 5) + hash) + c;
-		printf("%ld\n", hash);
 	}
 
-    return hash % 100;
+	unsigned long array_index = hash % 10;
+
+    return array_index;
 }
