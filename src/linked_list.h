@@ -1,6 +1,6 @@
 /* list node and root node are a little different
  * because the root node have a pointer to the last node
- * for performance reasons
+ * for performance reasons (avoid iterate up to the finish)
  */
 
 typedef struct list_node {
