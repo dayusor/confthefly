@@ -1,1 +1,3 @@
-Daemon that reads a yaml file, creates a tree on memory with the configuration and listens and responses the requested configuration in a very efficient way.
+Confthefly
+==========
+Daemon that reads a json config file, creates a tree on memory with the configurations and implements a RESTful API to provide the requested configurations.
